@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "324402335928",
+    "project_id": "my-chat-app-marwan",
+    "storage_bucket": "my-chat-app-marwan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324402335928:android:f499fd050058b86e57644d",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIIe7XBSZzIes-CnNfd66hVER_OZnR-sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,22 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "my-chat-app-marwan",
+          "appId": "1:324402335928:android:f499fd050058b86e57644d",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "my-chat-app-marwan",
+          "configurations": {
+            "android": "1:324402335928:android:f499fd050058b86e57644d",
+            "ios": "1:324402335928:ios:dfb9f19a4a89394257644d"
+          }
+        }
+      }
+    }
+  }
+}
