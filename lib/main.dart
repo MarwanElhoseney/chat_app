@@ -1,4 +1,6 @@
 import 'package:chat_app/firebase_options.dart';
+import 'package:chat_app/ui/add_room/add_room.dart';
+import 'package:chat_app/ui/home_screen/home_screen.dart';
 import 'package:chat_app/ui/regestretion/RegesterScreen.dart';
 import 'package:chat_app/ui/signIn/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,9 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         Regesterscreen.routeName: (context) => Regesterscreen(),
-        signInScreen.routeName: (context) => signInScreen()
+        SignInScreen.routeName: (context) => SignInScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
+        AddRoom.routeName: (context) => AddRoom(),
       },
-      initialRoute: Regesterscreen.routeName,
+      initialRoute: HomeScreen.routeName,
     );
   }
 }

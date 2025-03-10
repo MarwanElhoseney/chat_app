@@ -14,7 +14,8 @@ class CustomTextFormField extends StatefulWidget {
       this.obscure = false,
       this.visable = false,
       this.validate,
-      this.controller});
+    this.controller,
+  });
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();

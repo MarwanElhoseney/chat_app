@@ -1,4 +1,5 @@
 import 'package:chat_app/customs/custom_text_form_field.dart';
+import 'package:chat_app/ui/home_screen/home_screen.dart';
 import 'package:chat_app/ui/regestretion/RegesterScreen.dart';
 import 'package:chat_app/ui/signIn/signIn_ViewModel.dart';
 import 'package:chat_app/utiles/dialogs_utils/dilaogs.dart';
@@ -7,14 +8,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class signInScreen extends StatefulWidget {
+class SignInScreen extends StatefulWidget {
   static const String routeName = "loginScreen";
 
   @override
-  State<signInScreen> createState() => _signInScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _signInScreenState extends State<signInScreen>
+class _SignInScreenState extends State<SignInScreen>
     implements signInNaviegator {
   var formKey = GlobalKey<FormState>();
 
@@ -40,6 +41,11 @@ class _signInScreenState extends State<signInScreen>
                 fit: BoxFit.fill,
                 image: AssetImage("assets/images/background_image.png"))),
         child: Scaffold(
+            appBar: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              title: Text("Log In"),
+            ),
             backgroundColor: Colors.transparent,
             body: Form(
               key: formKey,
@@ -131,7 +137,7 @@ class _signInScreenState extends State<signInScreen>
         message,
         posActionTitles: action,
         posAction: () {
-          Navigator.pushReplacementNamed(context, signInScreen.routeName);
+          Navigator.pushReplacementNamed(context, HomeScreen.routeName);
         },
       );
     } else if (action == "cancel") {
