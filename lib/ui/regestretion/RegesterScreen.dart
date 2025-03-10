@@ -1,4 +1,5 @@
 import 'package:chat_app/customs/custom_text_form_field.dart';
+import 'package:chat_app/ui/home_screen/home_screen.dart';
 import 'package:chat_app/ui/regestretion/regester_view_model.dart';
 import 'package:chat_app/ui/signIn/signIn.dart';
 import 'package:chat_app/ui/signIn/signIn_ViewModel.dart';
@@ -21,8 +22,10 @@ class _RegesterscreenState extends State<Regesterscreen>
 
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-
+  TextEditingController fNameController = TextEditingController();
+  TextEditingController lNameController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+
   late regesterViewModel viewModel;
 
   void initState() {
@@ -42,6 +45,11 @@ class _RegesterscreenState extends State<Regesterscreen>
                 fit: BoxFit.fill,
                 image: AssetImage("assets/images/background_image.png"))),
         child: Scaffold(
+            appBar: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              title: Text("Regester Screen"),
+            ),
             extendBody: false,
             backgroundColor: Colors.transparent,
             body: Form(
@@ -55,6 +63,7 @@ class _RegesterscreenState extends State<Regesterscreen>
                       height: 250,
                     ),
                     CustomTextFormField(
+                      controller: fNameController,
                       text: "first name",
                       validate: (input) {
                         if (input == null || input.trim().isEmpty) {
@@ -67,6 +76,7 @@ class _RegesterscreenState extends State<Regesterscreen>
                       },
                     ),
                     CustomTextFormField(
+                      controller: lNameController,
                       text: "last name",
                       validate: (input) {
                         if (input == null || input.trim().isEmpty) {
@@ -141,7 +151,7 @@ class _RegesterscreenState extends State<Regesterscreen>
                     TextButton(
                         onPressed: () {
                           Navigator.pushReplacementNamed(
-                              context, signInScreen.routeName);
+                              context, SignInScreen.routeName);
                         },
                         child: Text("Already have account?signIn")),
                   ],
@@ -157,8 +167,8 @@ class _RegesterscreenState extends State<Regesterscreen>
       return;
     }
 
-    viewModel.regester(emailController.text, passwordController.text);
-
+    viewModel.regester(emailController.text, passwordController.text,
+        fNameController.text, lNameController.text);
   }
 
   @override
@@ -179,7 +189,7 @@ class _RegesterscreenState extends State<Regesterscreen>
         message,
         posActionTitles: action,
         posAction: () {
-          Navigator.pushReplacementNamed(context, signInScreen.routeName);
+          Navigator.pushReplacementNamed(context, SignInScreen.routeName);
         },
       );
     } else if (action == "cancel") {
